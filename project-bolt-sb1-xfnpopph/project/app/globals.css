@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 22% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 12%;
+
+    --primary: 43 96% 56%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 199 89% 92%;
+    --secondary-foreground: 199 80% 30%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 199 85% 48%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 43 96% 56%;
+
+    --chart-1: 43 96% 56%;
+    --chart-2: 199 85% 48%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 72% 51%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 25% 10%;
+    --foreground: 210 20% 96%;
+
+    --card: 222 22% 13%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 222 22% 13%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 43 96% 58%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 199 40% 24%;
+    --secondary-foreground: 199 70% 75%;
+
+    --muted: 220 18% 20%;
+    --muted-foreground: 220 12% 65%;
+
+    --accent: 199 80% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 0 0% 98%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 90% 55%;
+    --warning-foreground: 222 47% 11%;
+
+    --border: 220 14% 24%;
+    --input: 220 14% 24%;
+    --ring: 43 96% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .bg-grid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      hsl(var(--border)) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+  .glow-lamp {
+    box-shadow: 0 0 24px 0 hsl(var(--primary) / 0.45),
+      0 0 48px 0 hsl(var(--primary) / 0.18);
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+  }
+}
